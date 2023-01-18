@@ -15,3 +15,7 @@ vim -E -s -u "$HOME/.vimrc" +PlugInstall +qall
 # https://github.com/seebi/dircolors-solarized/
 curl -fLo ~/.dircolors --create-dirs \
     https://raw.githubusercontent.com/huyz/dircolors-solarized/master/dircolors.ansi-dark
+
+# https://github.com/cykerway/complete-alias/
+mkdir -p ~/env
+git clone https://github.com/cykerway/complete-alias.git ~/env/complete-alias
