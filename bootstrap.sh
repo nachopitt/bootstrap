@@ -5,7 +5,7 @@ if [ ! -d "$HOME/.cfg" ]; then
     git clone git@github.com:nachopitt/dotfiles.git $HOME/.cfg
 fi
 /usr/bin/git --git-dir=$HOME/.cfg/.git/ --work-tree=$HOME config --local status.showUntrackedFiles no
-/usr/bin/git --git-dir=$HOME/.cfg/.git/ --work-tree=$HOME checkout .
+/usr/bin/git --git-dir=$HOME/.cfg/.git/ --work-tree=$HOME checkout -- $HOME/.
 
 # https://github.com/junegunn/vim-plug
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
