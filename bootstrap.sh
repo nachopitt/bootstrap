@@ -10,6 +10,7 @@ fi
 # https://github.com/junegunn/vim-plug
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+vim -E -s -u "$HOME/.vimrc" +PlugInstall +qall
 
 # https://github.com/seebi/dircolors-solarized/
 curl -fLo ~/.dircolors --create-dirs \
