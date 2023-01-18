@@ -17,5 +17,6 @@ curl -fLo ~/.dircolors --create-dirs \
     https://raw.githubusercontent.com/huyz/dircolors-solarized/master/dircolors.ansi-dark
 
 # https://github.com/cykerway/complete-alias/
-mkdir -p ~/env
-git clone https://github.com/cykerway/complete-alias.git ~/env/complete-alias
+if [ ! -d "$HOME/env/complete_alias" ]; then
+    git clone https://github.com/cykerway/complete-alias.git $HOME/env/complete_alias
+fi
