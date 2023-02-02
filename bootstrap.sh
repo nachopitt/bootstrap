@@ -17,6 +17,11 @@ vim -E -s -u "$HOME/.vimrc" +PlugInstall +qall
 curl -fLo dircolors.ansi-dark https://raw.githubusercontent.com/huyz/dircolors-solarized/master/dircolors.ansi-dark
 mv dircolors.ansi-dark "$HOME/.dircolors"
 
+# https://github.com/mavnn/mintty-colors-solarized
+curl -fLo minttyrc.dark https://raw.githubusercontent.com/mavnn/mintty-colors-solarized/master/.minttyrc.dark
+cat minttyrc.dark >> $HOME/.minttyrc
+rm minttyrc.dark
+
 # https://github.com/cykerway/complete-alias/
 if [ ! -d "$HOME/complete-alias" ]; then
     git clone git@github.com:cykerway/complete-alias.git $HOME/complete-alias
