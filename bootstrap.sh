@@ -1,5 +1,14 @@
 #!/bin/bash
 
+unameOut="$(uname -s)"
+case "${unameOut}" in
+    Linux*)     machine=Linux;;
+    Darwin*)    machine=Mac;;
+    CYGWIN*)    machine=Cygwin;;
+    MINGW*)     machine=MinGw;;
+    *)          machine="UNKNOWN:${unameOut}"
+esac
+
 # https://github.com/nachopitt/dotfiles
 if [ ! -d "$HOME/.cfg" ]; then
     git clone git@github.com:nachopitt/dotfiles.git $HOME/.cfg
