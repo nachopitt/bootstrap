@@ -8,13 +8,14 @@ fi
 /usr/bin/git --git-dir=$HOME/.cfg/.git/ --work-tree=$HOME checkout -- $HOME/.
 
 # https://github.com/junegunn/vim-plug
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+mkdir -p "$HOME/.vim/autoload"
+curl -fLo plug.vim https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+mv plug.vim "$HOME/.vim/autoload/"
 vim -E -s -u "$HOME/.vimrc" +PlugInstall +qall
 
 # https://github.com/seebi/dircolors-solarized/
-curl -fLo ~/.dircolors --create-dirs \
-    https://raw.githubusercontent.com/huyz/dircolors-solarized/master/dircolors.ansi-dark
+curl -fLo dircolors.ansi-dark https://raw.githubusercontent.com/huyz/dircolors-solarized/master/dircolors.ansi-dark
+mv dircolors.ansi-dark "$HOME/.dircolors"
 
 # https://github.com/cykerway/complete-alias/
 if [ ! -d "$HOME/complete-alias" ]; then
