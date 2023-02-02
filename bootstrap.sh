@@ -18,5 +18,5 @@ curl -fLo ~/.dircolors --create-dirs \
 
 # https://github.com/cykerway/complete-alias/
 if [ ! -d "$HOME/complete-alias" ]; then
-    git clone https://github.com/cykerway/complete-alias.git $HOME/complete-alias
+    git clone git@github.com:cykerway/complete-alias.git $HOME/complete-alias
 fi
