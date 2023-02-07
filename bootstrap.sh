@@ -12,9 +12,10 @@ esac
 # https://github.com/nachopitt/dotfiles
 if [ ! -d "$HOME/.cfg" ]; then
     git clone git@github.com:nachopitt/dotfiles.git $HOME/.cfg
+
+    /usr/bin/git --git-dir=$HOME/.cfg/.git/ --work-tree=$HOME config --local status.showUntrackedFiles no
+    /usr/bin/git --git-dir=$HOME/.cfg/.git/ --work-tree=$HOME checkout -- $HOME/.
 fi
-/usr/bin/git --git-dir=$HOME/.cfg/.git/ --work-tree=$HOME config --local status.showUntrackedFiles no
-/usr/bin/git --git-dir=$HOME/.cfg/.git/ --work-tree=$HOME checkout -- $HOME/.
 
 # https://github.com/junegunn/vim-plug
 mkdir -p "$HOME/.vim/autoload"
