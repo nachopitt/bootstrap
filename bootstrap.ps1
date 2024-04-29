@@ -9,3 +9,4 @@ if (!(Test-Path -PathType container $HOME\.cfg)) {
 }
 
 gvim -E -s -u "$HOME\.vimrc" +PlugInstall +qall
+#nvim -E -s -u "$HOME\.vimrc" +PlugInstall +qall

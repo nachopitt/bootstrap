@@ -22,6 +22,7 @@ if [ ! -d "$HOME/.cfg" ]; then
 fi
 
 vim -E -s -u "$HOME/.vimrc" +PlugInstall +qall
+#nvim -E -s -u "$HOME\.vimrc" +PlugInstall +qall
 
 # https://github.com/cykerway/complete-alias/
 if [ ! -d "$HOME/complete-alias" ]; then
