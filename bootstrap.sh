@@ -15,8 +15,8 @@ if [ ! -d "$HOME/.cfg" ]; then
 
     GIT_SSH_COMMAND="ssh -F ssh_config" git clone git@github.com:nachopitt/dotfiles.git $HOME/.cfg
 
-    /usr/bin/git --git-dir=$HOME/.cfg/.git/ --work-tree=$HOME config --local status.showUntrackedFiles no
-    /usr/bin/git --git-dir=$HOME/.cfg/.git/ --work-tree=$HOME checkout -- $HOME/.
+    git --git-dir=$HOME/.cfg/.git/ --work-tree=$HOME config --local status.showUntrackedFiles no
+    git --git-dir=$HOME/.cfg/.git/ --work-tree=$HOME checkout -- $HOME/.
 
     rm ssh_config
 fi
