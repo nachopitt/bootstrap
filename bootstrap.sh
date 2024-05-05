@@ -9,6 +9,7 @@ case "${unameOut}" in
     *)          machine="UNKNOWN:${unameOut}"
 esac
 
+sudo apt-get install git vim curl neovim make gcc --yes --quiet
 # https://github.com/nachopitt/dotfiles
 if [ ! -d "$HOME/.cfg" ]; then
     curl -o ssh_config https://raw.githubusercontent.com/nachopitt/dotfiles/main/.ssh/config
