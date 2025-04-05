@@ -9,15 +9,13 @@ case "${unameOut}" in
     *)          machine="UNKNOWN:${unameOut}"
 esac
 
-sudo apt-get install git vim curl neovim make gcc --yes --quiet
+sudo apt-get install git vim curl neovim make gcc yadm --yes --quiet
+
 # https://github.com/nachopitt/dotfiles
-if [ ! -d "$HOME/.cfg" ]; then
+if [ ! -d $(yadm rev-parse --git-dir) ]; then
     curl -o ssh_config https://raw.githubusercontent.com/nachopitt/dotfiles/main/.ssh/config
 
-    GIT_SSH_COMMAND="ssh -F ssh_config" git clone git@github.com:nachopitt/dotfiles.git $HOME/.cfg
-
-    git --git-dir=$HOME/.cfg/.git/ --work-tree=$HOME config --local status.showUntrackedFiles no
-    git --git-dir=$HOME/.cfg/.git/ --work-tree=$HOME checkout -- $HOME/.
+    GIT_SSH_COMMAND="ssh -F ssh_config" yadm clone git@github.com:nachopitt/dotfiles.git
 
     rm ssh_config
 fi

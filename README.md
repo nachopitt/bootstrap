@@ -9,7 +9,7 @@ curl -o ssh_config https://raw.githubusercontent.com/nachopitt/dotfiles/main/.ss
 
 ## Required packages
 ```console
-sudo apt-get install git vim curl neovim make gcc ca-certificates
+sudo apt-get install git vim curl neovim make gcc ca-certificates yadm
 ```
 
 ## VMware packages
