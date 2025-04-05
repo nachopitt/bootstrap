@@ -1,3 +1,5 @@
+# PSYadm - Yet Another Dotfiles Manager Write In Powershell
+# https://github.com/jyfzh/PSYadm
 Install-Script -Name yadm -Scope CurrentUser
 
 try {
