@@ -13,15 +13,16 @@ sudo apt-get install git vim curl neovim make gcc --yes --quiet
 
 # https://github.com/nachopitt/dotfiles
 if [ ! -f $HOME/.local/bin/yadm ]; then
+    mkdir -p $HOME/.local/bin
     curl -fLo $HOME/.local/bin/yadm https://github.com/yadm-dev/yadm/raw/master/yadm && chmod a+x $HOME/.local/bin/yadm
 fi
 
 if [ ! -d $($HOME/.local/bin/yadm rev-parse --git-dir) ]; then
-    curl -o ssh_config https://raw.githubusercontent.com/nachopitt/dotfiles/main/.ssh/config
+    curl -o $HOME/ssh_config https://raw.githubusercontent.com/nachopitt/dotfiles/main/.ssh/config
 
-    GIT_SSH_COMMAND="ssh -F ssh_config" $HOME/.local/bin/yadm clone git@github.com:nachopitt/dotfiles.git
+    GIT_SSH_COMMAND="ssh -F $HOME/ssh_config" $HOME/.local/bin/yadm clone git@github.com:nachopitt/dotfiles.git
 
-    rm ssh_config
+    rm $HOME/ssh_config
 fi
 
 vim -E -s -u "$HOME/.vimrc" +PlugInstall +qall
